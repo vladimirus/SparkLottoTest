@@ -14,5 +14,4 @@ object TestApp extends App {
 
 class TestApp {
 
-  def saySomething = "something"
 }
