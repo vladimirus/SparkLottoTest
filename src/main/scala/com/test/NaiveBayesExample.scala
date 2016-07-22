@@ -8,7 +8,7 @@ import org.apache.spark.mllib.util.MLUtils
 object NaiveBayesExample {
 
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("NaiveBayesExample").setMaster("local[2]")
+    val conf = new SparkConf().setAppName("NaiveBayesExample").setMaster("local[4]")
     val sc = new SparkContext(conf)
 
     // Load and parse the data file.
