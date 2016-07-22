@@ -3,10 +3,9 @@ package com.test
 import org.apache.spark.{SparkContext, SparkConf}
 
 object TestApp extends App {
-  val conf = new SparkConf().setAppName("My App").setMaster("local[2]")
-  val sc = new SparkContext(conf)
+  val spark = new SparkContext(new SparkConf().setAppName("My App").setMaster("local[2]"))
 
-  val logData = sc.textFile("src/main/resources/lotto.txt", 10).cache()
+  val logData = spark.textFile("src/main/resources/lotto.txt", 10).cache()
 
   val numAs = logData.filter(line => line.contains("Guinevere")).count()
   val numBs = logData.filter(line => line.contains("Arthur")).count()
